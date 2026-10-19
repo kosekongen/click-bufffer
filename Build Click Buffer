@@ -1,25 +1,11 @@
 name: Build Click Buffer
-
-on:
-  workflow_dispatch:
-  push:
-    branches: ["**"]
-
+on: [push, workflow_dispatch]
 jobs:
   build:
-    strategy:
-      fail-fast: false
-      matrix:
-        config:
-          - name: Windows
-            os: windows-latest
-    name: ${{ matrix.config.name }}
-    runs-on: ${{ matrix.config.os }}
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Build the mod
-        uses: geode-sdk/build-geode-mod@main
+      - uses: geode-sdk/build-geode-mod@main
         with:
           bindings: geode-sdk/bindings
           bindings-ref: main
-          target: ${{ matrix.config.target }}
