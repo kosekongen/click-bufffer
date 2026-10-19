@@ -1,0 +1,36 @@
+{
+	"geode": "4.6.3",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
+	},
+	"id": "yourname.click-buffer",
+	"name": "Click Buffer",
+	"version": "v1.0.0",
+	"developer": "yourname",
+	"description": "Press up to N frames early and the mod fires the click on the exact frame an orb is touched.",
+	"settings": {
+		"enabled": {
+			"type": "bool",
+			"name": "Enabled",
+			"default": true
+		},
+		"window": {
+			"type": "int",
+			"name": "Buffer window (frames)",
+			"description": "How many physics frames early you can press and still have the click land on the right frame.",
+			"default": 8,
+			"min": 0,
+			"max": 60,
+			"control": { "input": true, "slider": true }
+		},
+		"block-completion": {
+			"type": "bool",
+			"name": "Block level completion",
+			"description": "Marks runs as test mode so assisted runs never submit.",
+			"default": true
+		}
+	}
+}
